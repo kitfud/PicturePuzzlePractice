@@ -17,16 +17,17 @@ function init() {
   $("h1").html("Solve the Puzzle!");
   $("#final").hide();
   var puzzle = [];
-  for (var i = 0; i < rows; i++) {
-    for (var j = 0; j < columns; j++) {
-      puzzle.push("<div class='imgContainer'>" +
-        "<img src=" + imgSrc +
-        " style='margin-left:- "+(j*imgWidth/columns)+"rem; "+
-      "margin-top:- "+(i*imgHeight/rows)+"rem; '></img></div>");
-      
-      $("#drop-zone").append("<div class='imgContainer'></div>");
-    }
-  }
+for(var i = 0; i < rows; i++){
+for(var j = 0; j < columns; j++){
+puzzle.push("<div class='"+(i*columns+j)+" imgContainer'>"+
+"<img src="+imgSrc+
+" style='margin-left: -"+(j*imgWidth/columns)+"rem;"+
+"margin-top: -"+(i*imgHeight/rows)+"rem;'></img></div>");
+
+$("#drop-zone").append("<div class='"+(i*columns+j)+
+" imgContainer'></div>");
+}
+}
 
   randomize(puzzle);
   
