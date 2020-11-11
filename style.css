@@ -1,0 +1,15 @@
+body{
+ text-align: center !important;
+}
+#final{
+ width: 25rem;
+ height: 20rem;
+ overflow: hidden;
+ margin: auto;
+ display: block;
+}
+.picture{
+ width: 25rem;
+ height: 20rem;
+ margin: auto;
+}
