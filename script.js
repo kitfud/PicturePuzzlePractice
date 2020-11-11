@@ -1,7 +1,7 @@
 var imgWidth = 25;
 var imgHeight = 20;
-var rows = 1;
-var columns = 2;
+var rows = 4;
+var columns = 5;
 var imgSrc = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
 
 function randomize(puzzle) {
