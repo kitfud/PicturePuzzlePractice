@@ -16,6 +16,7 @@ function randomize(puzzle) {
 function init() {
   $("h1").html("Solve the Puzzle!");
   $("#final").hide();
+
   var puzzle = [];
 for(var i = 0; i < rows; i++){
 for(var j = 0; j < columns; j++){
@@ -40,6 +41,15 @@ $("#drop-zone").append("<div class='"+(i*columns+j)+
     "height": imgHeight / rows + "rem"
   });
   $("#pieces > .imgContainer").draggable();
+
+ $("#drop-zone > .imgContainer").droppable({
+ drop: function(event, ui){
+ $(this).css({"background-color": "red"});
+ ui.draggable.css({"border": ".1rem solid red"});
+ }
+ });
+
+
 }
 
 
