@@ -44,8 +44,17 @@ $("#drop-zone").append("<div class='"+(i*columns+j)+
 
  $("#drop-zone > .imgContainer").droppable({
  drop: function(event, ui){
- $(this).css({"background-color": "red"});
- ui.draggable.css({"border": ".1rem solid red"});
+var destNum = $(this).attr("class").split(" ")[0];
+ var pieceNum = ui.draggable.attr("class").split(" ")[0];
+ if (destNum === pieceNum){
+ $(this).append(ui.draggable.find("img"))
+ .css("border-style", "none");
+ ui.draggable.addClass("invisible");
+ }else{
+ ui.draggable.css({
+ "border": ".1rem solid red"
+ });
+ }
  }
  });
 
