@@ -1,7 +1,7 @@
 var imgWidth = 25;
 var imgHeight = 20;
-var rows = 4;
-var columns = 5;
+var rows = 1;
+var columns = 2;
 var imgSrc = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
 
 function randomize(puzzle) {
@@ -15,6 +15,8 @@ function randomize(puzzle) {
 
 function init() {
   $("h1").html("Solve the Puzzle!");
+var total = rows*columns;
+ var count = 0;
   $("#final").hide();
 
   var puzzle = [];
@@ -50,6 +52,16 @@ var destNum = $(this).attr("class").split(" ")[0];
  $(this).append(ui.draggable.find("img"))
  .css("border-style", "none");
  ui.draggable.addClass("invisible");
+ count ++;
+ if (count === total){
+ $("h1").html("Great Job! Click Image To Replay");
+$("#drop-zone").click(function(){
+  $(".picture").empty();
+  $("#drop-zone").empty()
+  init()
+})
+
+ }
  }else{
  ui.draggable.css({
  "border": ".1rem solid red"
